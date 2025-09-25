@@ -1,0 +1,40 @@
+body {
+    color: #5b5c60;
+    background-color: #323437;
+    font-family: "Open sans";
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 4vh
+}
+#banner {
+    background: url("images/pexels-scottwebb-2117937.jpg") ;
+    flex: 1 1 calc(50% - 20px);
+    height: 50vh;
+    opacity: 50%;
+}
+
+.icon-btn { 
+    appearance: none; 
+    background: transparent;
+    border: 0;
+    color: #fff;
+    padding: 8px;
+    margin-right: 8px; 
+    text-decoration: none;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+}
+
+.icon-btn:hover { background: rgba(255,255,255,.08); }
+
+.icon-btn.switch { margin-left: auto; }
+
+#intro {
+    color: #e2b714;
+}
