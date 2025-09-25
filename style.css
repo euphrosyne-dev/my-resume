@@ -7,22 +7,35 @@ body {
 .header-container {
     display: flex;
     align-items: center;
-    gap: 4vh
+    justify-content: space-between;
+    width: 100%;
 }
+
+.left-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icon-group {
+    display: flex;
+    gap: 8px;
+}
+
 #banner {
-    background: url("images/pexels-scottwebb-2117937.jpg") ;
+    background: url("images/pexels-scottwebb-2117937.jpg");
     flex: 1 1 calc(50% - 20px);
     height: 50vh;
     opacity: 50%;
 }
 
-.icon-btn { 
-    appearance: none; 
+.icon-btn {
+    appearance: none;
     background: transparent;
     border: 0;
-    color: #fff;
+    color: #e2b714;
     padding: 8px;
-    margin-right: 8px; 
+    margin-right: 8px;
     text-decoration: none;
     line-height: 1;
     display: inline-flex;
@@ -31,9 +44,9 @@ body {
     border-radius: 9999px;
 }
 
-.icon-btn:hover { background: rgba(255,255,255,.08); }
-
-.icon-btn.switch { margin-left: auto; }
+.icon-btn:hover {
+    background: rgba(255, 255, 255, .08);
+}
 
 #intro {
     color: #e2b714;
