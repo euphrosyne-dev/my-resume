@@ -2,6 +2,9 @@ body {
     color: #5b5c60;
     background-color: #323437;
     font-family: "Open sans";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
 }
 
 .header-container {
@@ -23,17 +26,16 @@ body {
 }
 
 #banner {
-    background: url("images/pexels-scottwebb-2117937.jpg");
-    flex: 1 1 calc(50% - 20px);
+    background-color: #fff;
     height: 50vh;
-    opacity: 50%;
+    opacity: 20%;
 }
 
 .icon-btn {
     appearance: none;
     background: transparent;
     border: 0;
-    color: #e2b714;
+    color: #fff;
     padding: 8px;
     margin-right: 8px;
     text-decoration: none;
@@ -45,7 +47,7 @@ body {
 }
 
 .icon-btn:hover {
-    background: rgba(255, 255, 255, .08);
+    background: #e2b714;
 }
 
 #intro {
