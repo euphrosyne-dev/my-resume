@@ -110,11 +110,15 @@ html {
     text-align: center;
 }
 
-#formations {
-    margin: 1;
-    padding-left: 1ch;
+.section_format {
+  --space-y: 1rem;
+  --pad-x: 1ch;
 }
-#formations h1 {
-    color: #e2b714;
 
+.section_format h1 {
+  color: #e2b714;
+}
+.section_format :where(h1,h2,h3,h4,h5,h6,p) {
+  margin-block: 1;
+  padding-inline: 1ch;
 }
