@@ -30,7 +30,6 @@ html {
 .icon-group {
     display: flex;
     gap: 8px;
-    /* espacement entre icônes */
 }
 
 /* Banner centrée + radius*/
@@ -72,8 +71,6 @@ html {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    /* Boîte carrée => cercle avec border-radius */
     width: 36px;
     height: 36px;
     padding: 0;
@@ -81,25 +78,19 @@ html {
     transition: background-color .2s ease, color .2s ease;
 }
 
-/* Fond jaune derrière le bouton au survol/focus */
 .icon-btn:hover,
 .icon-btn:focus-visible {
     background-color: #e2b714;
-    /* JAUNE derrière le bouton */
     color: #323437;
-    /* option: meilleure lisibilité du pictogramme */
     outline: none;
 }
 
-/* Option: état actif un peu plus sombre */
 .icon-btn:active {
     background-color: #caa516;
 }
 
-/* Pictogramme FA centré dans le badge */
 .icon-btn .fa {
     font-size: 18px;
-    /* ajuster selon le rendu souhaité */
     line-height: 1;
     vertical-align: middle;
 }
@@ -110,9 +101,16 @@ html {
     text-align: center;
 }
 
+/* SUPPRIMÉ l’ancien alignement flex des formations
+.align_formations {
+    display: flex;
+}
+*/
+
+/* Section générique */
 .section_format {
-    --space-y: 1rem;
-    --pad-x: 1ch;
+    display: flex;
+    flex-direction: column;
 }
 
 .section_format h1 {
@@ -125,5 +123,39 @@ html {
 }
 
 .nav a {
-    color: #e2b714
+    color: #e2b714;
+    text-align: center;
+}
+
+.icon-bar {
+  position: fixed;
+  right: 0%;
+  top: 20%;
+  transform: translateY(-50%);
+  background-color: #2c2e31;
+  opacity: 80%;
+  
+  padding: 1vw;
+  border-radius: 30px;
+}
+
+/* Education: grille 3 colonnes + titre sur toute la largeur */
+.section_format.education {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: start;
+}
+
+.section_format.education .edu-title {
+    grid-column: 1 / -1;
+    color: #e2b714;
+    margin: 0;
+    text-align: left;
+}
+
+.section_format.education .edu-item {
+    background: #2c2e31;
+    padding: 1rem;
+    border-radius: 12px;
 }
