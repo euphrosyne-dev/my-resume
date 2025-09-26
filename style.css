@@ -95,19 +95,11 @@ html {
     vertical-align: middle;
 }
 
-/* Intro (si un titre isolé doit être centré) */
 #intro {
     color: #e2b714;
     text-align: center;
 }
 
-/* SUPPRIMÉ l’ancien alignement flex des formations
-.align_formations {
-    display: flex;
-}
-*/
-
-/* Section générique */
 .section_format {
     display: flex;
     flex-direction: column;
@@ -159,66 +151,87 @@ html {
 }
 
 /* Place la flèche sur la même ligne que le titre et à droite */
-.section_format.education details.accordion > summary {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  list-style: none;
-  padding: 0;
-  width: 100%;
+.section_format.education details.accordion>summary {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+    padding: 0;
+    width: 100%;
 }
 
 /* Retire le marker natif */
-.section_format.education details.accordion > summary::marker { content: ""; }
-.section_format.education details.accordion > summary::-webkit-details-marker { display: none; }
+.section_format.education details.accordion>summary::marker {
+    content: "";
+}
+
+.section_format.education details.accordion>summary::-webkit-details-marker {
+    display: none;
+}
 
 /* Normalise le h1 interne */
-.section_format.education details.accordion > summary > h1 { margin: 0; }
+.section_format.education details.accordion>summary>h1 {
+    margin: 0;
+}
 
 /* Flèche custom qui pivote */
-.section_format.education details.accordion > summary::after {
-  content: "▾";
-  font-size: 0.9em;
-  line-height: 1;
-  margin-left: 0.5rem;
-  transition: transform .2s ease;
-  color: #e2b714;
+.section_format.education details.accordion>summary::after {
+    content: "▾";
+    font-size: 0.9em;
+    line-height: 1;
+    margin-left: 0.5rem;
+    transition: transform .2s ease;
+    color: #e2b714;
 }
-.section_format.education details.accordion[open] > summary::after { transform: rotate(-180deg); }
+
+.section_format.education details.accordion[open]>summary::after {
+    transform: rotate(-180deg);
+}
 
 /* Le bloc details occupe toute la largeur de la grille parente */
-#expériences_professionelles details.accordion { grid-column: 1 / -1; }
+#expériences_professionelles details.accordion {
+    grid-column: 1 / -1;
+}
 
 /* Grille sur le contenu déroulant (moderne) */
 @supports selector(::details-content) {
-  #expériences_professionelles details.accordion::details-content {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-    align-items: start;
-    padding-block: 0.5rem;
-  }
-  #expériences_professionelles details.accordion::details-content > * {
-    min-width: 0;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
+    #expériences_professionelles details.accordion::details-content {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        align-items: start;
+        padding-block: 0.5rem;
+    }
+
+    #expériences_professionelles details.accordion::details-content>* {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
 }
 
 /* Fallback si ::details-content non supporté */
 @supports not selector(::details-content) {
-  #expériences_professionelles details.accordion[open] {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-    align-items: start;
-  }
-  #expériences_professionelles details.accordion > summary { grid-column: 1 / -1; }
-  #expériences_professionelles details.accordion > article.edu-item {
-    margin: 0;
-    min-width: 0;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
+    #expériences_professionelles details.accordion[open] {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        align-items: start;
+    }
+
+    #expériences_professionelles details.accordion>summary {
+        grid-column: 1 / -1;
+    }
+
+    #expériences_professionelles details.accordion>article.edu-item {
+        margin: 0;
+        min-width: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+}
+
+footer {
+    align-self: flex-end;
 }
