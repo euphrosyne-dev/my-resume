@@ -60,7 +60,7 @@ html {
     max-width: 120ch;
 }
 
-/* Boutons d’icône: aura circulaire avec fond jaune derrière au hover */
+/* Boutons d’icône */
 .icon-btn {
     appearance: none;
     background: transparent;
@@ -95,11 +95,13 @@ html {
     vertical-align: middle;
 }
 
+/* Intro */
 #intro {
     color: #e2b714;
     text-align: center;
 }
 
+/* Section générique */
 .section_format {
     display: flex;
     flex-direction: column;
@@ -150,14 +152,15 @@ html {
     border-radius: 12px;
 }
 
-/* Place la flèche sur la même ligne que le titre et à droite */
+/* Summary (titre + flèche proche du texte) */
 .section_format.education details.accordion>summary {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     cursor: pointer;
     list-style: none;
     padding: 0;
-    width: 100%;
+    width: auto;
+    gap: 0.5rem;
 }
 
 /* Retire le marker natif */
@@ -179,7 +182,6 @@ html {
     content: "▾";
     font-size: 0.9em;
     line-height: 1;
-    margin-left: 0.5rem;
     transition: transform .2s ease;
     color: #e2b714;
 }
@@ -232,6 +234,51 @@ html {
     }
 }
 
+/* Footer à droite (dans un flux en colonne) */
 footer {
     align-self: flex-end;
+}
+
+/* Mobile (<= 640px) */
+@media (max-width: 640px) {
+
+    /* 1 colonne partout */
+    .section_format.education {
+        grid-template-columns: 1fr;
+    }
+
+    @supports selector(::details-content) {
+        #expériences_professionelles details.accordion::details-content {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @supports not selector(::details-content) {
+        #expériences_professionelles details.accordion[open] {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Bannière compacte + icônes accessibles */
+    #banner {
+        height: auto;
+        padding: 0.75rem;
+        border-radius: 24px;
+        margin: 1rem;
+    }
+
+    .icon-bar {
+        right: 1rem;
+        top: auto;
+        bottom: 1rem;
+        padding: 0.75rem;
+        opacity: 0.95;
+    }
+
+    /* Summary: flèche proche du titre, ligne compacte */
+    .section_format.education details.accordion>summary {
+        display: inline-flex;
+        width: auto;
+        gap: 0.5rem;
+    }
 }
