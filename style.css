@@ -122,6 +122,7 @@ html {
     opacity: 80%;
     padding: 1vw;
     border-radius: 30px;
+    border: 2px solid #e2b714; 
 }
 
 .section_format.education {
@@ -142,6 +143,9 @@ html {
     background: #2c2e31;
     padding: 1rem;
     border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0; 
 }
 
 .section_format.education details.accordion>summary {
@@ -162,7 +166,6 @@ html {
     margin: 0;
 }
 
-
 .section_format.education details.accordion>summary::after {
     content: "▾";
     font-size: 0.9rem;
@@ -175,12 +178,13 @@ html {
     transform: rotate(-180deg);
 }
 
-#expériences_professionelles details.accordion {
+.section_format.education details.accordion {
     grid-column: 1 / -1;
+    min-width: 0;
 }
 
 @supports selector(::details-content) {
-    #expériences_professionelles details.accordion::details-content {
+    .section_format.education details.accordion::details-content {
         display: grid;
         width: 100%;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -189,51 +193,57 @@ html {
         padding-block: 0.5rem;
     }
 
-    #expériences_professionelles details.accordion::details-content>* {
+    .section_format.education details.accordion::details-content > * {
+        width: 100%;
+        box-sizing: border-box;
         min-width: 0;
         overflow-wrap: anywhere;
         word-break: break-word;
+        align-self: start;
     }
 }
 
 @supports not selector(::details-content) {
-    #expériences_professionelles details.accordion[open] {
+    .section_format.education details.accordion[open] {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
         align-items: start;
+        width: 100%;
+        padding-block: 0.5rem;
+        box-sizing: border-box;
     }
 
-    #expériences_professionelles details.accordion>summary {
+    .section_format.education details.accordion>summary {
         grid-column: 1 / -1;
     }
 
-    #expériences_professionelles details.accordion>article.edu-item {
+    .section_format.education details.accordion>article.edu-item,
+    .section_format.education details.accordion > * {
         margin: 0;
         min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
         overflow-wrap: anywhere;
         word-break: break-word;
+        align-self: start;
     }
 }
 
-footer {
-    align-self: flex-end;
-}
 
 @media (max-width: 540px) {
-
     .section_format.education {
         grid-template-columns: 1fr;
     }
 
     @supports selector(::details-content) {
-        #expériences_professionelles details.accordion::details-content {
+        .section_format.education details.accordion::details-content {
             grid-template-columns: 1fr;
         }
     }
 
     @supports not selector(::details-content) {
-        #expériences_professionelles details.accordion[open] {
+        .section_format.education details.accordion[open] {
             grid-template-columns: 1fr;
         }
     }
@@ -258,4 +268,51 @@ footer {
         width: auto;
         gap: 0.5rem;
     }
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#contact label {
+    font-weight: 600;
+    color: #e2b714;
+    margin-bottom: 0.25rem;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #2c2e31;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box; 
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border: 2px solid #e2b714;
+    background: #323437; 
+}
+
+.contact-btn {
+    background-color: #e2b714;
+    color: #323437;
+    border: none;
+    padding: 0.75rem 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    align-self: flex-start;
+}
+
+.contact-btn:hover {
+    background-color: #caa516;
 }

@@ -40,28 +40,33 @@
                 studies with an MSc in Cybersecurity at Epitech starting in September 2026. </p>
         </section>
         <section id="formations" class="section_format education">
-            <h1 class="edu-title">Education</h1>
-            <article class="edu-item">
-                <h2>Pré-Msc</h2>
-                <h3>Epitech</h3>
-                <h4>September 2025 - August 2026</h4>
-                <p>4-month bootcamp: intensive training in the fundamentals of web, mobile, and software
-                    development.<br> Introduction to key fields: Cybersecurity, AI, UX Security, DevOps.<br> Management
-                    of IT projects.</p>
-            </article>
-            <article class="edu-item">
-                <h2>Master’s Degree in Biology – Management and Marketing</h2>
-                <h3>University of Rennes and IGR-IAE Rennes (Graduate School of Management)</h3>
-                <h4>2021 - 2023</h4>
-                <p>Digital, strategic, and operational marketing.<br> Market research, management of scientific
-                    projects.
-                </p>
-            </article>
-            <article class="edu-item">
-                <h2>Bachelor’s Degree in Neuroscience</h2>
-                <h3>University of Caen</h3>
-                <h4>2017 - 2021</h4>
-            </article>
+            <details class="accordion">
+                <summary>
+                    <h1 class="edu-title">Education</h1>
+                </summary>
+                <article class="edu-item">
+                    <h2>Pré-Msc</h2>
+                    <h3>Epitech</h3>
+                    <h4>September 2025 - August 2026</h4>
+                    <p>4-month bootcamp: intensive training in the fundamentals of web, mobile, and software
+                        development.<br> Introduction to key fields: Cybersecurity, AI, UX Security, DevOps.<br>
+                        Management
+                        of IT projects.</p>
+                </article>
+                <article class="edu-item">
+                    <h2>Master’s Degree in Biology – Management and Marketing</h2>
+                    <h3>University of Rennes and IGR-IAE Rennes (Graduate School of Management)</h3>
+                    <h4>2021 - 2023</h4>
+                    <p>Digital, strategic, and operational marketing.<br> Market research, management of scientific
+                        projects.
+                    </p>
+                </article>
+                <article class="edu-item">
+                    <h2>Bachelor’s Degree in Neuroscience</h2>
+                    <h3>University of Caen</h3>
+                    <h4>2017 - 2021</h4>
+                </article>
+            </details>
         </section>
         <section id="expériences_professionelles" class="section_format education">
             <details class="accordion">
@@ -112,9 +117,29 @@
                 <p>TOEIC, 925 score</p>
             </article>
         </section>
+        <section id="contact" class="section_format education">
+            <h1 class="edu-title">Contact Form</h1>
+            <article class="edu-item">
+                <form action="mailto:nathan.lemaitre.pro@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Your Name</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="email">Your Email</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="company">Company</label><br>
+                    <input type="text" id="company" name="company"><br><br>
+
+                    <label for="message">Message</label><br>
+                    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+                    <button type="submit" class="contact-btn">Send Message</button>
+                </form>
+            </article>
+        </section>
     </main>
     <footer class="footer_gap">
-        <h4>Contact :</h4>
+        <h4>Contact details :</h4>
         <address> Nathan Lemaitre<br> Phone: +33 6 61 46 25 50<br> Mail: nathan.lemaitre.pro@gmail.com </address>
     </footer>
 </body>
