@@ -122,7 +122,7 @@ html {
     opacity: 80%;
     padding: 1vw;
     border-radius: 30px;
-    border: 2px solid #e2b714; 
+    border: 2px solid #e2b714;
 }
 
 .section_format.education {
@@ -145,7 +145,7 @@ html {
     border-radius: 12px;
     width: 100%;
     box-sizing: border-box;
-    min-width: 0; 
+    min-width: 0;
 }
 
 .section_format.education details.accordion>summary {
@@ -193,7 +193,7 @@ html {
         padding-block: 0.5rem;
     }
 
-    .section_format.education details.accordion::details-content > * {
+    .section_format.education details.accordion::details-content>* {
         width: 100%;
         box-sizing: border-box;
         min-width: 0;
@@ -219,7 +219,7 @@ html {
     }
 
     .section_format.education details.accordion>article.edu-item,
-    .section_format.education details.accordion > * {
+    .section_format.education details.accordion>* {
         margin: 0;
         min-width: 0;
         width: 100%;
@@ -234,6 +234,8 @@ html {
 @media (max-width: 540px) {
     .section_format.education {
         grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding-inline: 0.5rem;
     }
 
     @supports selector(::details-content) {
@@ -252,7 +254,7 @@ html {
         height: auto;
         padding: 0.75rem;
         border-radius: 24px;
-        margin: 1rem;
+        margin: 0.5rem;
     }
 
     .icon-bar {
@@ -268,12 +270,26 @@ html {
         width: auto;
         gap: 0.5rem;
     }
+
+    .icon-bar {
+        right: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    #contact form {
+        padding-inline: 0.5rem;
+    }
 }
+
 
 #contact form {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem;
 }
 
 #contact label {
@@ -284,6 +300,9 @@ html {
 
 #contact input,
 #contact textarea {
+
+    max-width: 100%;
+    box-sizing: border-box;
     width: 100%;
     padding: 0.8rem;
     border-radius: 8px;
@@ -292,13 +311,13 @@ html {
     color: #fff;
     font-size: 1rem;
     outline: none;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 #contact input:focus,
 #contact textarea:focus {
     border: 2px solid #e2b714;
-    background: #323437; 
+    background: #323437;
 }
 
 .contact-btn {
@@ -315,4 +334,13 @@ html {
 
 .contact-btn:hover {
     background-color: #caa516;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+main, section, #banner, #contact, .section_format.education {
+    max-width: 100vw;
+    box-sizing: border-box;
 }
